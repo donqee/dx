@@ -40,8 +40,8 @@ jobs:
             -H 'Content-Type: application/json' \
             -d '
             {
-              "msgtype": "markdown",
-              "markdown": {
+              "msgtype": "text",
+              "text": {
                   "content": "'"`date "+%F %T %A"`$1"'"
               }
             }'
