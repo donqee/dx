@@ -132,6 +132,6 @@ jobs:
         echo "----------"
         done
 
-        [ g"${WorkWeiBot}" != g"" ] && WorkWei "${result}"
-        [ g"${DingDingBot}" != g"" ] && DingDing "${result}"
-        [ g"${SCKEY}" != g"" ] && FTQQ "天翼签到" "${result}"
+        [ g"${WorkWeiBot}" != g"" ] && WorkWei "${result}" || echo "未设置企业微信通知"
+        [ g"${DingDingBot}" != g"" ] && DingDing "${result}" || echo "未设置钉钉通知"
+        [ g"${SCKEY}" != g"" ] && FTQQ "天翼签到" "${result}" || echo "未设置Server酱通知"
