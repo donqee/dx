@@ -39,34 +39,28 @@ def main():
     }
     #第一次抽奖
     response = s.get(url,headers=headers)
-    if ("errorCode" in response.text):
+    if ("prizeName" in response.text):
+        #description = response.json()['description']
+        #print(f"抽奖获得{description}")
+        prizeName = response.json()['prizeName']
+        print(f"抽奖获得{prizeName}")
+    else:
         if(response.json()['errorCode'] == "User_Not_Chance"):
             print("抽奖次数不足")
         else:
             print(response.text)
-    else:
-        #description = response.json()['description']
-        #print(f"抽奖获得{description}")
-        prizeName = response.json()['prizeName']
-        if (not prizeName):
-            print(response.text)
-        else:
-            print(f"抽奖获得{prizeName}")
     #第二次抽奖
     response = s.get(url2,headers=headers)
-    if ("errorCode" in response.text):
+    if ("prizeName" in response.text):
+        #description = response.json()['description']
+        #print(f"抽奖获得{description}")
+        prizeName = response.json()['prizeName']
+        print(f"抽奖获得{prizeName}")
+    else:
         if(response.json()['errorCode'] == "User_Not_Chance"):
             print("抽奖次数不足")
         else:
             print(response.text)
-    else:
-        #description = response.json()['description']
-        #print(f"抽奖获得{description}")
-        prizeName = response.json()['prizeName']
-        if (not prizeName):
-            print(response.text)
-        else:
-            print(f"抽奖获得{prizeName}")
 
 BI_RM = list("0123456789abcdefghijklmnopqrstuvwxyz")
 def int2char(a):
