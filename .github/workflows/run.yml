@@ -2,9 +2,9 @@ name: Cloud189Checkin
 
 on:
   push:
-    branches: [ main ]
+    branches: [ test ]
   pull_request:
-    branches: [ main ]
+    branches: [ test ]
   watch:
     types: started
   schedule:
