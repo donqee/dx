@@ -45,10 +45,13 @@ def main():
         prizeName = response.json()['prizeName']
         print(f"抽奖获得{prizeName}")
     else:
-        if(response.json()['errorCode'] == "User_Not_Chance"):
-            print("抽奖次数不足")
-        else:
-            print(response.text)
+        try:
+            if(response.json()['errorCode'] == "User_Not_Chance"):
+                print("抽奖次数不足")
+            else:
+                print(response.text)
+        except:
+                print(response.text)
     #第二次抽奖
     response = s.get(url2,headers=headers)
     if ("prizeName" in response.text):
@@ -57,10 +60,13 @@ def main():
         prizeName = response.json()['prizeName']
         print(f"抽奖获得{prizeName}")
     else:
-        if(response.json()['errorCode'] == "User_Not_Chance"):
-            print("抽奖次数不足")
-        else:
-            print(response.text)
+        try:
+            if(response.json()['errorCode'] == "User_Not_Chance"):
+                print("抽奖次数不足")
+            else:
+                print(response.text)
+        except:
+                print(response.text)
 
 BI_RM = list("0123456789abcdefghijklmnopqrstuvwxyz")
 def int2char(a):
